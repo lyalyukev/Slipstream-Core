@@ -17,7 +17,8 @@
         "pusher/pusher-php-server": "^7.2",
         "sentry/sentry-laravel": "^3.6",
         "spatie/laravel-settings": "^3.2",
-        "tightenco/ziggy": "^1.0"
+        "tightenco/ziggy": "^1.0",
+        "ext-fileinfo": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8",

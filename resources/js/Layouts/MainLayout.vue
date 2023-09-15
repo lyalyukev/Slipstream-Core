@@ -27,9 +27,10 @@ let showSettingsModal = ref(false)
             <div v-if="usePage().props.auth.user">
               <ul class="flex justify-around gap-8 sm:gap-2">
                 <li><NavItem class="text-gray-300">Welcome, {{ $page.props.auth.user.name }}</NavItem></li>
-                <li><NavItem link="dashboard" class="text-brand-primary-500" as="button">Dashboard </NavItem></li>
+                <li><NavItem link="dashboard" class="text-brand-primary-500" as="button"><Link :href="route('dashboard')" method="GET" as="button">Dashboard</Link></NavItem></li>
                 <li><NavItem class="text-gray-200 hover:text-gray-400" as="button" @click="showSettingsModal = true">Settings</NavItem></li>
                 <li><NavItem class="text-gray-200 hover:text-gray-400" @click="showUploadModal = true">Upload</NavItem></li>
+                  <li><NavItem class="text-gray-200 hover:text-gray-400"><Link :href="route('hotfolder.check')" method="GET" as="button">Hot folder</Link></NavItem></li>
                 <li><NavItem class="text-gray-200 hover:text-gray-400"><Link :href="route('logout')" method="POST" as="button">Logout</Link></NavItem></li>
               </ul>
             </div>

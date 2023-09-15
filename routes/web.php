@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HotFolderController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SlipController;
@@ -33,6 +34,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/settings', [SettingsController::class, 'store'])->name('settings.store');
     route::get('/settings/storage', [SettingsController::class, 'storageUsage'])->name('settings.storage');
     route::post('/settings/clear-tmp', [SettingsController::class, 'clearTmp'])->name('settings.clear-tmp');
+
+    Route::get('hotfolder', [HotFolderController::class, 'checkFolder'])->name('hotfolder.check');
+    Route::post('hotfolder', [HotFolderController::class, 'destroyFile'])->name('hotfolder.delete');
 
     /* Jobs */
     Route::post('/job/{slip}', [JobController::class, 'requeue'])->name('job.requeue');

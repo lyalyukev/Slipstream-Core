@@ -51,6 +51,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'hotfolder' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/hotfolder'),
+            'url' => env('APP_URL') . '/storage/hotfolder',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
         'tmp' => [
             'driver' => 'local',
